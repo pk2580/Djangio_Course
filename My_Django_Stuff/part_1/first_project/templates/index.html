@@ -1,0 +1,74 @@
+<!-- Tempalte lecture -->
+<!--
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>First app</title>
+  </head>
+  <body>
+    <h1>Hello this is index.html!</h1>
+    {{insert_me}}
+
+
+  </body>
+</html> -->
+
+<!-- <!DOCTYPE html> -->
+<!-- here we dont we staticfiles we have to use static -->
+<!--
+{% load static %} -->
+<!-- <html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Django Giotar Page</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}"/>
+  </head>
+  <body>
+    <h1>Hello this is index.html!</h1>
+  <img src="{% static "images/Django.jpg" %}" alt="Uh Ho please enter correct path">
+
+
+  </body>
+</html> -->
+
+<!-- model templating view -->
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Django Level2 </title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}"/>
+  </head>
+  <body>
+    <h1>Hi welcome to Django Level Two</h1>
+    <h2>Here are your access_record</h2>
+
+    <div class"djangotwo">
+      {% if access_records %}
+      <table>
+        <thead>
+          <th>Site Name</th>
+          <th>Date Access</th>
+        </thead>
+
+        <!-- statring the table loop -->
+
+        {% for acc in access_records %}
+        <tr>
+          <td>{{ acc.name }}</td>
+          <td>{{ acc.date }}</td>
+
+        </tr>
+        <!-- ending of table loop -->
+        {% endfor %}
+      </table>
+
+      {% else %}
+         <p>No access record found</p>
+      {% endif %}
+    </div>
+  </body>
+</html>
